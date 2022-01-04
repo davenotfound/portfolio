@@ -1,0 +1,41 @@
+.home-left {
+  position: relative;
+  left: -0%;
+  width: 55%;
+  height: 100vh;
+  background-color: #fff;
+  animation: slide-perm 2s forwards;
+
+  .left-container {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    background-color: #fff;
+    bottom: 0;
+    height: 35%;
+    padding-left: 18%;
+    padding-top: 1rem;
+
+    .title {
+      position: relative;
+      left: 0;
+      opacity: 0;
+      top: 20px;
+    }
+
+    .about {
+      position: relative;
+      margin-top: 0.5rem;
+      margin-right: 1rem;
+      opacity: 0;
+      top: 20px;
+    }
+
+    .active {
+      position: relative;
+      top: 0;
+      opacity: 1;
+      transition: 0.5s;
+    }
+  }
+}

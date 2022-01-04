@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Mulish;
+}
+
+body,
+html {
+  background-color: #0e0e10;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  25% {
+    left: -100%;
+  }
+  75% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes slide-perm {
+  0% {
+    left: -100%;
+  }
+  25% {
+    left: -100%;
+  }
+  75% {
+    left: 0;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.active {
+  position: relative;
+  top: 0;
+  opacity: 1;
+  transition: 0.5s;
+}
