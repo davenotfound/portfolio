@@ -10,11 +10,11 @@ class Socials extends React.Component {
       socialLinks: [
         {
           linkName: 'LINKEDIN',
-          url: ''
+          url: 'https://www.linkedin.com/in/davenotfound'
         },
         {
           linkName: 'GITHUB',
-          url: ''
+          url: 'https://github.com/davenotfound'
         },
         {
           linkName: 'EMAIL',
@@ -43,7 +43,9 @@ class Socials extends React.Component {
           {
           this.state.socialLinks
             .map((linkItem, index) => (
-              <li key={index} className={`${this.props.beginAnimation ? 'active' : ''} link`}>{linkItem.linkName}</li>
+              <li key={index} className={`${this.props.beginAnimation ? 'active' : ''} link`}>
+                <a href={`${linkItem.url}`} target='_blank' rel="noreferrer">{linkItem.linkName}</a>
+              </li>
             ))
           }
         </ul>

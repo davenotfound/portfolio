@@ -19,6 +19,20 @@ a {
   text-decoration: none;
 }
 
+a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: black;
+  transition: width 0.3s;
+}
+
+a:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
 @keyframes slide {
   0% {
     left: -100%;
