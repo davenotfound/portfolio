@@ -9,6 +9,10 @@
     bottom: 0;
     position: absolute;
     left: 18%;
+    background-color: white;
+    padding: 3px 6px;
+    padding-left: 0;
+    white-space: nowrap;
   }
 
   .nav-options {
@@ -26,4 +30,17 @@
   top: 0;
   opacity: 1;
   transition: 0.5s;
+}
+
+@media only screen and (max-width: 1224px) {
+  .header-container .nav-options {
+    width: fit-content;
+    right: unset;
+    left: 18%;
+    flex-direction: column;
+    top: 120px;
+    a {
+      margin-top: 8px;
+    }
+  }
 }

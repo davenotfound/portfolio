@@ -66,12 +66,12 @@ class Header extends React.Component {
   render() {  
     return (
       <div className={`${this.props.beginAnimate ? 'active' : ''} header-container`}>
-        <h1 className='logo'><a href="">{this.state.text}</a></h1>
+        <h1 className='logo'><a className='hover-underline-animation' href="">{this.state.text}</a></h1>
         <div className='nav-options'>
           {/* <Link className="" to="">PORTFOLIO</Link>
           <Link className="" to="">CONTACT</Link> */}
-          <a href="">PORTFOLIO</a>
-          <a href="">CONTACT</a>
+          <a className='hover-underline-animation' href="">PORTFOLIO</a>
+          <a className='hover-underline-animation' href="">CONTACT</a>
         </div>
       </div>
     )

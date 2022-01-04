@@ -28,9 +28,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/* <HomeLeft beginAnimation={this.state.beginAnimate} />
-        <ImageOverlay beginAnimation={this.state.beginAnimate} />
-        <Socials beginAnimation={this.state.beginAnimate} /> */}
         <Routes>
           <Route path="/" element={<HomePage />} />
         </Routes>

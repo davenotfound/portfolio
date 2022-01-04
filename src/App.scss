@@ -19,18 +19,47 @@ a {
   text-decoration: none;
 }
 
-a::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 1px;
-  background: black;
-  transition: width 0.3s;
+// a::after {
+//   content: "";
+//   display: block;
+//   width: 0;
+//   height: 1px;
+//   background: black;
+//   transition: width 0.3s;
+// }
+
+// a:hover::after {
+//   width: 100%;
+//   transition: width 0.3s;
+// }
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #000;
+  width: fit-content;
 }
 
-a:hover::after {
+.hover-underline-animation.inverted:after {
+  background-color: #fff;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
   width: 100%;
-  transition: width 0.3s;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 @keyframes slide {
@@ -68,4 +97,13 @@ a:hover::after {
   top: 0;
   opacity: 1;
   transition: 0.5s;
+}
+
+@media only screen and (min-width: 1224px) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 320px) {
 }
