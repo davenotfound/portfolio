@@ -1,0 +1,17 @@
+.form-error {
+  color: #dc4739;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  // animation: 1s ease-out 0s 1 slideInFromTop;
+}
+
+//todo implement error animations
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
