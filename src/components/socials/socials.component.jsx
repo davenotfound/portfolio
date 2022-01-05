@@ -53,7 +53,9 @@ class Socials extends React.Component {
 
   render() {
     return (
-      <div className="socials">
+      <div className={`${this.props.layoutStyle} socials`}>
+      {/* <div className="socials" style={this.props.contactLayout ? {} : {top: '50%'}}> */}
+
         <ul>
           {this.state.socialLinks.map((linkItem, index) => (
             <li

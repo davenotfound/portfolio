@@ -48,6 +48,13 @@ a {
   transform-origin: bottom left;
 }
 
+.active {
+  position: relative;
+  top: 0;
+  opacity: 1;
+  transition: 0.5s;
+}
+
 @keyframes slide {
   0% {
     left: -100%;
@@ -78,11 +85,34 @@ a {
   }
 }
 
-.active {
-  position: relative;
-  top: 0;
-  opacity: 1;
-  transition: 0.5s;
+@keyframes slide-down {
+  0% {
+    top: -100%;
+  }
+  25% {
+    top: -100%;
+  }
+  75% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes slide-down-perm {
+  0% {
+    top: -100%;
+  }
+  25% {
+    top: -100%;
+  }
+  75% {
+    top: 0;
+  }
+  100% {
+    top: 0;
+  }
 }
 
 @media only screen and (min-width: 1224px) {

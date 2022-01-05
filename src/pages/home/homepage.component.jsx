@@ -29,7 +29,7 @@ class HomePage extends React.Component {
       <div>
           <HomeLeft beginAnimation={this.state.beginAnimate} />
           <ImageOverlay beginAnimation={this.state.beginAnimate} />
-          <Socials beginAnimation={this.state.beginAnimate} />
+          <Socials layoutStyle={'home-layout'} beginAnimation={this.state.beginAnimate} />
       </div>
     )
   }
