@@ -19,20 +19,6 @@ a {
   text-decoration: none;
 }
 
-// a::after {
-//   content: "";
-//   display: block;
-//   width: 0;
-//   height: 1px;
-//   background: black;
-//   transition: width 0.3s;
-// }
-
-// a:hover::after {
-//   width: 100%;
-//   transition: width 0.3s;
-// }
-
 .hover-underline-animation {
   display: inline-block;
   position: relative;

@@ -31,7 +31,7 @@ class Socials extends React.Component {
     const newTyped = `${link.typed}${linkName.substr(typed.length)[0]}`;
     const moreToType = newTyped.length !== linkName.length;
 
-    const links = this.state.socialLinks;
+    const links = [...this.state.socialLinks];
     links[idx].typed = newTyped;
     link = links[idx];
     this.setState(links, () => {
