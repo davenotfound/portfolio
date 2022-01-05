@@ -10,6 +10,7 @@
     position: absolute;
     left: 18%;
     background-color: white;
+    z-index: 3;
     padding: 3px 6px;
     padding-left: 0;
     white-space: nowrap;
@@ -22,6 +23,7 @@
     display: flex;
     width: 50%;
     justify-content: space-around;
+    z-index: 3;
   }
 }
 
@@ -40,7 +42,14 @@
     flex-direction: column;
     top: 120px;
     a {
-      margin-top: 8px;
+      background-color: white;
+      padding-right: 5px;
+      padding-bottom: 5px;
+      padding-top: 5px;
     }
+  }
+
+  .header-container .logo {
+    margin-bottom: 8px;
   }
 }
