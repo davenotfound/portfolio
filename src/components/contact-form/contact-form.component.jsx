@@ -89,10 +89,15 @@ class ContactForm extends React.Component {
     this.setState({formValid: this.state.emailValid && this.state.nameValid && this.state.subjectValid && this.state.messageValid});
   }
 
+  //todo animate in form properly
   render() {
     return(
         <div className='form-container'>
-          <form className='contact-form' onSubmit={this.handleSubmit} onInvalid={() => console.log("working!")}>
+
+          {/* <div className='overlay' style={ this.props.beginAnimation ? { animation:'slide 1s forwards', opacity: 1} : {animation : '', opacity: 0}} ></div> */}
+
+
+          <form className='contact-form' onSubmit={this.handleSubmit}>
             <FormInput name="email" value={this.state.email} handleChange={this.handleChange} onBlur={this.handleBlur} label="EMAIL" required/>
             <FormError formError={this.state.formErrors['email']}/>
 

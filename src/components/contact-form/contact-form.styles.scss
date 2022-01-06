@@ -26,6 +26,7 @@
   }
 
   .form-container {
+    left: -100%;
     .contact-form {
       background-color: #fff;
     }
@@ -53,6 +54,7 @@
   }
 
   .submit-button:disabled {
+    opacity: 0.6;
     color: #dc4739;
   }
 }
