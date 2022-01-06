@@ -1,38 +1,53 @@
 import React from 'react'
 import FormError from '../form-error/form-error.component';
 import FormInput from '../form-input/form-input.component';
+
+import emailjs from "@emailjs/browser";
+
 import "./contact-form.styles.scss"
+
+const initialState = {
+  email: '',
+  name: '',
+  subject: '',
+  message: '',
+
+
+  formErrors:{
+    email: '',
+    name: '',
+    subject: '',
+    message: ''
+  },
+
+  emailValid: false,
+  nameValid: false,
+  subjectValid: false,
+  messageValid: false,
+  formValid: false
+};
 
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      email: '',
-      name: '',
-      subject: '',
-      message: '',
-
-
-      formErrors:{
-        email: '',
-        name: '',
-        subject: '',
-        message: ''
-      },
-
-      emailValid: false,
-      nameValid: false,
-      subjectValid: false,
-      messageValid: false,
-      formValid: false
-    };
+    this.state = initialState;
   }
 
-  handleSubmit = (event) => {}
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    let templateParams = {user_email: this.state.email, user_name: this.state.name, message: this.state.message}
+    console.log(templateParams);
+
+    emailjs.send('portfolio_cs', 'portfolio_contact_form', templateParams , 'user_0yp7W6T4dUj38EMqv5lOk')
+    .then((result) => {
+        this.reset();
+    });
+
+  }
 
   handleChange = (event) => {
-    console.log('fire');
     const {value, name} = event.target;
 
     this.setState({ [name]: value }, ()=> {this.validateField(name, value)});
@@ -43,6 +58,9 @@ class ContactForm extends React.Component {
     this.validateField(name, value)
   }
 
+  reset() {
+    this.setState(initialState);
+  }
 
   validateField(fieldName, value) {
 

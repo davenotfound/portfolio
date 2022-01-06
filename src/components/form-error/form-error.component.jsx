@@ -3,7 +3,6 @@ import "./form-error.style.scss";
 
 const FormError = ({formError}) =>{
 
-  console.log(formError);
   return(
     <div className='form-error'>
     {
