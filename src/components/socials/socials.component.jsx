@@ -1,5 +1,6 @@
 import React from "react";
 import "./socials.styles.scss";
+import pdf from "../../assets/resume.pdf";
 
 class Socials extends React.Component {
   constructor(props) {
@@ -18,8 +19,13 @@ class Socials extends React.Component {
           typed: "",
         },
         {
+          linkName: "RESUME",
+          url: pdf,
+          typed: "",
+        },
+        {
           linkName: "EMAIL",
-          url: "",
+          url: "/contact",
           typed: "",
         },
       ],
@@ -43,7 +49,7 @@ class Socials extends React.Component {
 
   animate = () => {
     setTimeout(() => {
-      this.state.socialLinks.forEach((link, idx) => this.typeChar(link, idx))
+      this.state.socialLinks.forEach((link, idx) => this.typeChar(link, idx));
     }, 2200);
   };
 
@@ -54,15 +60,18 @@ class Socials extends React.Component {
   render() {
     return (
       <div className={`${this.props.layoutStyle} socials`}>
-      {/* <div className="socials" style={this.props.contactLayout ? {} : {top: '50%'}}> */}
-
         <ul>
           {this.state.socialLinks.map((linkItem, index) => (
             <li
               key={index}
               className={`${this.props.beginAnimation ? "active" : ""} link`}
             >
-              <a className="hover-underline-animation inverted" href={`${linkItem.url}`} target="_blank" rel="noreferrer">
+              <a
+                className="hover-underline-animation inverted"
+                href={`${linkItem.url}`}
+                target={linkItem.linkName === "EMAIL" ? "" : "_blank"}
+                rel="noreferrer"
+              >
                 {linkItem.typed}
               </a>
             </li>

@@ -75,15 +75,12 @@ class Header extends React.Component {
           </a>
         </h1>
         <div className="nav-options">
-          {/* <Link className="" to="">PORTFOLIO</Link>
-          <Link className="" to="">CONTACT</Link> */}
-          <a className="hover-underline-animation" href="">
+          <a className="hover-underline-animation" href="/portfolio">
             PORTFOLIO
           </a>
           <a className="hover-underline-animation" href="/contact">
             CONTACT
           </a>
-          {/* <Link className="" to="">CONTACT</Link> */}
         </div>
       </div>
     );
