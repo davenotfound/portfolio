@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
 import "./header.styles.scss";
 
 class Header extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -28,55 +27,66 @@ class Header extends React.Component {
         { t: "{DAVENOTFOUND }", ms: 200 },
         { t: "{DAVENOTFOUND_}", ms: 200 },
         { t: "{DAVENOTFOUND}", ms: 200 },
-        { t: "DAVENOTFOUND", ms: 0 }
+        { t: "DAVENOTFOUND", ms: 0 },
       ],
-      text: '',
+      text: "",
       stepDenominator: 1,
       i: 0,
       endAnim: false,
-
     };
   }
 
   introAnimate = async () => {
     if (window.localStorage.stepDenominator) {
-      await this.setState({stepDenominator: window.localStorage.stepDenominator});
+      await this.setState({
+        stepDenominator: window.localStorage.stepDenominator,
+      });
     }
 
     let step = this.state.anim[this.state.i];
-    await this.setState({text: step.t});
+    await this.setState({ text: step.t });
 
-    this.setState((prevState, props) => ({i: prevState.i + 1 }));
+    this.setState((prevState, props) => ({ i: prevState.i + 1 }));
 
     if (this.state.i < this.state.anim.length) {
-        setTimeout(this.introAnimate, step.ms / this.state.stepDenominator);
+      setTimeout(this.introAnimate, step.ms / this.state.stepDenominator);
+    } else {
+      await this.setState({ endAnim: true });
+      window.localStorage.stepDenominator = 2;
     }
-    else {
-        await this.setState({endAnim: true})
-        window.localStorage.stepDenominator = 2;
-    }
-  }
+  };
 
-  componentDidUpdate(prevProps, prevState) {    
-    if (prevProps.beginAnimate !== this.props.beginAnimate){
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.beginAnimate !== this.props.beginAnimate) {
       this.introAnimate();
     }
   }
 
-  // todo figure out why link element hides h1 logo
-  render() {   
+  render() {
     return (
-      <div className={`${this.props.beginAnimate ? 'active' : ''} header-container`}>
-        <h1 className='logo'><a className='hover-underline-animation' href="/">{this.state.text}</a></h1>
-        <div className='nav-options'>
+      <div
+        className={`${
+          this.props.beginAnimate ? "active" : ""
+        } header-container`}
+      >
+        <h1 className="logo">
+          <a className="hover-underline-animation" href="/">
+            {this.state.text}
+          </a>
+        </h1>
+        <div className="nav-options">
           {/* <Link className="" to="">PORTFOLIO</Link>
           <Link className="" to="">CONTACT</Link> */}
-          <a className='hover-underline-animation' href="">PORTFOLIO</a>
-          <a className='hover-underline-animation' href="/contact">CONTACT</a>
-           {/* <Link className="" to="">CONTACT</Link> */}
+          <a className="hover-underline-animation" href="">
+            PORTFOLIO
+          </a>
+          <a className="hover-underline-animation" href="/contact">
+            CONTACT
+          </a>
+          {/* <Link className="" to="">CONTACT</Link> */}
         </div>
       </div>
-    )
+    );
   }
 }
 

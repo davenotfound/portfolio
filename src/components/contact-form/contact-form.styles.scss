@@ -1,6 +1,6 @@
 .form-container {
-  height: 500px;
-  overflow: auto;
+  max-height: 85vh;
+  overflow-y: auto;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -12,7 +12,7 @@
   padding-left: 25px;
   padding-bottom: 25px;
   padding-top: 10px;
-
+  animation: slide-perm-opacity 1s forwards;
   background-color: #fff;
   z-index: 2;
 
@@ -63,5 +63,8 @@
   .form-container {
     width: 85%;
     top: 20%;
+    height: 500px;
+    max-height: none;
+    overflow-y: scroll;
   }
 }

@@ -85,6 +85,17 @@ a {
   }
 }
 
+@keyframes slide-perm-opacity {
+  0% {
+    left: -150%;
+    opacity: 0.5;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
 @keyframes slide-down {
   0% {
     top: -100%;

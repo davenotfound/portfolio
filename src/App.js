@@ -13,16 +13,6 @@ class App extends React.Component {
     };
   }
 
-  // animate = () => {
-  //   setTimeout(async () => {
-  //     await this.setState({ beginAnimate: true });
-  //   }, 2000);
-  // };
-
-  // componentDidMount() {
-  //   this.animate();
-  // }
-
   render() {
     return (
       <div>

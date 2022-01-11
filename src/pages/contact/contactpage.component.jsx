@@ -1,11 +1,10 @@
-import React from 'react'
-import ContactCentral from '../../components/contact-central/contact-central.component';
-import Socials from '../../components/socials/socials.component';
+import React from "react";
+import ContactCentral from "../../components/contact-central/contact-central.component";
+import Socials from "../../components/socials/socials.component";
 import "./contactpage.styles.scss";
-import ContactForm from '../../components/contact-form/contact-form.component';
+import ContactForm from "../../components/contact-form/contact-form.component";
 
 class ContactPage extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -24,15 +23,17 @@ class ContactPage extends React.Component {
     this.animate();
   }
 
-  //todo style socials component such that it sits in the black
   render() {
     return (
-      <div className='contact-page'>
-        <ContactCentral beginAnimation={this.state.beginAnimate}/>
-        <ContactForm beginAnimation={this.state.beginAnimate}/>
-        <Socials layoutStyle={'contact-layout'} beginAnimation={this.state.beginAnimate}/>
+      <div className="contact-page">
+        <ContactCentral beginAnimation={this.state.beginAnimate} />
+        <ContactForm beginAnimation={this.state.beginAnimate} />
+        <Socials
+          layoutStyle={"contact-layout"}
+          beginAnimation={this.state.beginAnimate}
+        />
       </div>
-    )
+    );
   }
 }
 
