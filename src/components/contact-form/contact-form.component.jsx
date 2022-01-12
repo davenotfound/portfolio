@@ -41,14 +41,13 @@ class ContactForm extends React.Component {
       user_name: this.state.name,
       message: this.state.message,
     };
-    console.log(templateParams);
 
     emailjs
       .send(
         "portfolio_cs",
         "portfolio_contact_form",
         templateParams,
-        "user_0yp7W6T4dUj38EMqv5lOk"
+        process.env.REACT_APP_EMAILJS_KEY
       )
       .then((result) => {
         this.reset();
