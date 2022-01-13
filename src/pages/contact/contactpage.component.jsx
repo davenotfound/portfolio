@@ -28,10 +28,6 @@ class ContactPage extends React.Component {
       <div className="contact-page">
         <ContactCentral beginAnimation={this.state.beginAnimate} />
         <ContactForm beginAnimation={this.state.beginAnimate} />
-        <Socials
-          layoutStyle={"contact-layout"}
-          beginAnimation={this.state.beginAnimate}
-        />
       </div>
     );
   }

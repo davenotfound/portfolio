@@ -13,10 +13,14 @@ const HomeLeft = ({ beginAnimation }) => {
         </h1>
         <div className={`${beginAnimation ? "active" : ""} about`}>
           I've been a Web Developer for 5 years now and leverage my knowledge of
-          JavaScript, CSS and HTML in front-end frameworks such as React and its
-          relevant libraries (Redux, GraphQL etc...). I primarily use Node.js
-          with databases such as Firebase & PostgreSQL over HTTP for backend
-          work.
+          JavaScript, HTML and CSS in front-end frameworks such as React and its
+          relevant libraries (Redux, GraphQL etc...). For back end work I
+          primarily use Node.js with Express along with databases such as
+          PostgreSQL over HTTP or Firebase.
+          <br />
+          <br />
+          In my free time there's a high chance you'll find me either climbing
+          outdoors or rolling nat 20's in my D&D campaign.
           <br />
           <br />
           Check out my{" "}

@@ -54,7 +54,11 @@
 
 @media only screen and (max-width: 768px) {
   .home-left {
+    width: 60%;
+
     .left-container {
+      background-color: transparent;
+      color: white;
       .title {
         font-size: 1.3rem;
       }
